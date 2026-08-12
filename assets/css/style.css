@@ -154,7 +154,7 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
 .pub:last-child { border-bottom: none; }
 
 .thumb {
-  border: 1px dashed #cfd8e3;
+  border: 1px solid var(--rule);
   background: #f7f9fb;
   overflow: hidden;
 }
