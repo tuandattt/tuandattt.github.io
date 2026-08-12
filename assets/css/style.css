@@ -112,6 +112,49 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
 
 .muted { color: var(--muted); }
 
+/* ---------- publications ---------- */
+.pubs { list-style: none; margin: 0; padding: 0; }
+
+.pub {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pub:first-child { padding-top: 4px; }
+.pub:last-child { border-bottom: none; }
+
+.thumb {
+  border: 1px dashed #cfd8e3;
+  background: #f7f9fb;
+  overflow: hidden;
+}
+.thumb img { display: block; width: 100%; height: auto; }
+
+.pub-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+.pub-title a { color: var(--link); }
+
+.authors, .venue { margin: 0 0 8px; font-size: 0.95rem; }
+.authors .me { color: var(--link); font-weight: 600; }
+.venue { color: var(--muted); }
+
+.pub-links { margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.pub-links a {
+  font-size: 0.85rem;
+  padding: 3px 12px;
+  border-radius: 4px;
+  background: #eef4fa;
+  color: var(--link);
+}
+.pub-links a:hover { background: #dbe8f5; text-decoration: none; }
+
 footer {
   border-top: 1px solid var(--rule);
   padding-top: 18px;
@@ -130,4 +173,6 @@ footer p { margin: 0; }
   }
   .profile { position: static; }
   h2 { font-size: 1.6rem; }
+  .pub { grid-template-columns: 1fr; gap: 14px; }
+  .thumb { max-width: 320px; }
 }
