@@ -71,12 +71,22 @@
     </section>
 
     <section>
-      <h2>Publications</h2>
+      <div class="section-head">
+        <h2>Publications</h2>
+        <div class="pub-filter">
+          <button type="button" data-filter="selected" class="active" aria-pressed="true">Selected</button>
+          <button type="button" data-filter="all" aria-pressed="false">All</button>
+        </div>
+      </div>
 
       <!--
         TEMPLATE — copy one <li class="pub"> block to add a paper.
         Thumbnails: replace src with assets/img/<paper>.png (any wide-ish image works).
         Links: delete any <a> you don't have; href="#" is a placeholder to fill in.
+
+        "Selected" shows papers where you are first author — detected automatically
+        from whether <span class="me"> is the first name in the author list.
+        To override, add data-selected="true" or data-selected="false" to the <li>.
       -->
       <ul class="pubs">
 
@@ -229,5 +239,41 @@
 
   </div>
 </main>
+
+<script>
+(function () {
+  var papers = Array.prototype.slice.call(document.querySelectorAll('.pubs .pub'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.pub-filter button'));
+
+  function isSelected(li) {
+    if (li.dataset.selected === 'true') return true;
+    if (li.dataset.selected === 'false') return false;
+    var authors = li.querySelector('.authors');
+    return !!authors && authors.firstChild === authors.querySelector('.me');
+  }
+
+  function apply(mode) {
+    var visible = [];
+    papers.forEach(function (li) {
+      li.hidden = !(mode === 'all' || isSelected(li));
+      li.classList.remove('last-visible');
+      if (!li.hidden) visible.push(li);
+    });
+    if (visible.length) visible[visible.length - 1].classList.add('last-visible');
+
+    buttons.forEach(function (btn) {
+      var on = btn.dataset.filter === mode;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () { apply(btn.dataset.filter); });
+  });
+
+  apply('selected');
+})();
+</script>
 </body>
 </html>

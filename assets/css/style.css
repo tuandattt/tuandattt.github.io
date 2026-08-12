@@ -113,7 +113,34 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
 .muted { color: var(--muted); }
 
 /* ---------- publications ---------- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.section-head h2 { margin: 0; }
+
+.pub-filter { display: flex; gap: 8px; }
+.pub-filter button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 5px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #eef4fa;
+  color: var(--link);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.pub-filter button:hover { background: #dbe8f5; }
+.pub-filter button.active { background: var(--link); color: #fff; }
+
 .pubs { list-style: none; margin: 0; padding: 0; }
+.pub[hidden] { display: none; }
+.pub.last-visible { border-bottom: none; }
 
 .pub {
   display: grid;
