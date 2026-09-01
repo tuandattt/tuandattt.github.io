@@ -158,8 +158,8 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
 
 .tl-card {
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 20px;
   align-items: start;
   background: #f5f7f9;
   border-radius: 12px;
@@ -168,16 +168,16 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
 }
 
 .tl-logo {
-  width: 56px;
-  min-height: 56px;
+  width: 112px;
+  min-height: 48px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .tl-logo img {
   display: block;
   max-width: 100%;
-  max-height: 56px;
+  max-height: 48px;
   width: auto;
   height: auto;
 }
@@ -313,6 +313,6 @@ footer p { margin: 0; }
   .thumb { max-width: 320px; }
   .tl-item { grid-template-columns: 38px 22px minmax(0, 1fr); }
   .tl-card { grid-template-columns: 1fr; gap: 12px; padding: 14px 16px; }
-  .tl-logo { width: 46px; min-height: 46px; }
-  .tl-logo img { max-height: 46px; }
+  .tl-logo { width: 96px; min-height: 40px; }
+  .tl-logo img { max-height: 40px; }
 }
