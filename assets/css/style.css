@@ -285,7 +285,10 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
   background: #f7f9fb;
   overflow: hidden;
 }
-.thumb img { display: block; width: 100%; height: auto; }
+.thumb img,
+.thumb video { display: block; width: 100%; height: auto; }
+
+.pub-footnote { margin: 16px 0 0; font-size: 0.85rem; }
 
 .pub-title {
   font-size: 1.15rem;
