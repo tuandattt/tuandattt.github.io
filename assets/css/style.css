@@ -99,6 +99,8 @@ h2 {
 
 p { margin: 0 0 16px; }
 
+.about p { text-align: justify; hyphens: auto; }
+
 ul.interests, ul.news { margin: 0; padding-left: 1.3em; }
 ul.interests li, ul.news li { margin-bottom: 10px; }
 
