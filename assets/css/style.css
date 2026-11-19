@@ -167,6 +167,9 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
   margin: 0 0 14px 8px;
 }
 
+/* timeline without logos (education) */
+.timeline.no-logo .tl-card { grid-template-columns: minmax(0, 1fr); }
+
 .tl-logo {
   width: 150px;
   min-height: 56px;
@@ -288,7 +291,7 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
 .thumb img,
 .thumb video { display: block; width: 100%; height: auto; }
 
-.pub-footnote { margin: 16px 0 0; font-size: 0.85rem; }
+.pub-footnote { margin: 0 0 6px; font-size: 0.85rem; }
 
 .pub-title {
   font-size: 1.15rem;
