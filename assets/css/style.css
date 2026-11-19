@@ -169,6 +169,7 @@ ul.interests li, ul.news li { margin-bottom: 10px; }
 
 /* timeline without logos (education) */
 .timeline.no-logo .tl-card { grid-template-columns: minmax(0, 1fr); }
+.timeline.no-logo .tl-body { grid-column: 1 / -1; }
 
 .tl-logo {
   width: 150px;
